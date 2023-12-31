@@ -8,7 +8,7 @@ public class InOrder {
 	while(temp <=  nam2){
 		System.out.print(" " +  nam2);
 		temp =  nam2;
-		 nam2 = (int)(Math.round()*10);
+		 nam2 = (int)(Math.random()*10);
 		
 	}
 

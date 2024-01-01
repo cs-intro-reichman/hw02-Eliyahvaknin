@@ -5,10 +5,8 @@ public class Reverse {
             System.out.print(input.charAt(i));
         }
         System.out.println();
-		      int middle = input.length() / 2;
-
-		       char mid = input.charAt(middle);
-		       
-		       System.out.println("The middle character " + mid);
+        int middle = input.length() / 2;
+        har mid = input.charAt(middle);
+        System.out.println("The middle character " + mid);
     }
 }

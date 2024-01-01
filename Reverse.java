@@ -6,7 +6,7 @@ public class Reverse {
             System.out.print(input.charAt(i));
         }
         System.out.println();
-		      int middle = input.length() -1 /  2;
+		      int middle = (input.length()-1)/2;
 
 		       char mid = input.charAt(middle);
 		       

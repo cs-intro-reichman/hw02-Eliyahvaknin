@@ -1,4 +1,4 @@
-public class Reverse {
+public class Reverse1 {
 	public static void main (String[] args){
         String input = args[0];
         System.out.println();
@@ -6,11 +6,12 @@ public class Reverse {
             System.out.print(input.charAt(i));
         }
         System.out.println();
+                System.out.println();
+
 		      int middle = (input.length()-1)/2;
 
 		       char mid = input.charAt(middle);
 		       
 		       System.out.println("The middle character  is " + mid);
-               System.out.println("");
+               System.out.println();
     }
-}

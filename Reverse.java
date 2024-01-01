@@ -3,7 +3,8 @@ public class Reverse {
         String input = args[0];
         System.out.println();
         for (int i = input.length() - 1; i >= 0; i--) {
-            System.out.print(input.charAt(i)+" ");
+            System.out.print(input.charAt(i));
+            System.out.print(" ");
         }
         System.out.println();
 		      int middle = (input.length()-1)/2;

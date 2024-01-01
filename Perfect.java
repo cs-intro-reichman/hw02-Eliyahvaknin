@@ -1,4 +1,4 @@
-public class Perfect1 {
+public class Perfect {
     public static void main (String[] args) {
     int nam = Integer.parseInt(args[0]);
     int sam = 0;

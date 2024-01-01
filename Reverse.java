@@ -1,14 +1,12 @@
-public class Reverse {
-	public static void main (String[] args){
+public class Divisors {
+    public static void main (String[] args){
 
-		public static void main (String[] args){
+		      String input = args[0];
 
-			String input = args[0];
+		      int middle = input.length() / 2;
 
-			int middle = input.length() / 2;
-
-			char mid = input.charAt(middle);
-
-			System.out.println("The middle character " + mid);
-		}
-	}
+		       char mid = input.charAt(middle);
+		       
+		       System.out.println("The middle character " + mid);
+    }
+}

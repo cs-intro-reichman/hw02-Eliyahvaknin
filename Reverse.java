@@ -12,7 +12,7 @@ public class Reverse {
 		       char mid = input.charAt(middle);
 		       
 		       System.out.println("The middle character  is " + mid);
-               System.out.println();
-               System.out.println();
+               System.out.println(" ");
+               
     }
 }

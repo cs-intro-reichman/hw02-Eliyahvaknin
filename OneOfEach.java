@@ -1,16 +1,16 @@
 public class OneOfEach {
 	public static void main (String[] args) {
-        boolean boy = false;
-        boolean girl = false;
+        boolean boyborn = false;
+        boolean girlborn = false;
         int Children = 0;
 
-        while (!(boy && girl)) {
+        while (!(boyborn && girlborn)) {
             if (Math.random() <= 0.5) {
                 System.out.print("b"+" ");
-                boy = true;
+                boyborn = true;
             } else {
                 System.out.print("g ");
-                girl = true;
+                girlborn = true;
             }
             Children++;
         }

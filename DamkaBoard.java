@@ -6,11 +6,11 @@ public class DamkaBoard {
 			for (int j = 0; j < nam; j++) {
 
 				if ((i + j) % 2 == 0) {
-					System.out.print("*");
+					System.out.print("* ");
 				}
 				else {
-
-					System.out.print(" * ");
+					System.out.print(" ");
+					System.out.print("* ");
 				}
 			}
 			System.out.println();

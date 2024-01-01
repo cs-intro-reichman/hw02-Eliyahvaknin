@@ -1,4 +1,4 @@
-public class DamkaBoard {
+public claspublic class DamkaBoard1 {
 	public static void main(String[] args) {
 		int nam = Integer.parseInt(args[0]);
 
@@ -10,13 +10,14 @@ public class DamkaBoard {
 
 				}
 				else {
-					System.out.print(" ");
-					System.out.print("*");
+					//System.out.print(" ");
+					System.out.print(" *");
 					System.out.print(" ");
 
 
 				}
 			}
+			System.out.println();
 		}
 	}
 }

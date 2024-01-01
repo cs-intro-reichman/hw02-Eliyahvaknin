@@ -1,4 +1,4 @@
-public claspublic class DamkaBoard {
+public class DamkaBoard {
 	public static void main(String[] args) {
 		int nam = Integer.parseInt(args[0]);
 

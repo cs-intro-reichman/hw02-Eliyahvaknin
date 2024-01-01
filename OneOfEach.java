@@ -5,7 +5,7 @@ public class OneOfEach {
         int Children = 0;
 
         while (!(boy && girl)) {
-            if (Math.random() < 0.5) {
+            if (Math.random() <= 0.5) {
                 System.out.print("b"+" ");
                 boy = true;
             } else {

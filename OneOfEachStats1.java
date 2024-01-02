@@ -1,6 +1,5 @@
-
 public class OneOfEachStats1 {
-	public static void main (String[] args) {
+    public static void main (String[] args) {
 
         int T = Integer.parseInt(args[0]);
         double totalkids = 0;
@@ -10,26 +9,26 @@ public class OneOfEachStats1 {
         int[] kidsCounts = new int[T];
 
         for (int i = 0; i < T; i++) {
-            boolean boy = false;
-            boolean girl = false;
-            int numberOfkids = 0;
+           boolean boyborn = false;
+        boolean girlborn = false;
+        int Children = 0;
 
-            while (!(boy && girl)) {
-                if (Math.random() < 0.5) {
-                    boy = true;
+             while (!(boyborn && girlborn)) {
+            if (Math.random() <= 0.5) {
+                    boyborn = true;
                 } else {
-                    girl = true;
+                    girlborn = true;
                 }
-                numberOfkids++;
+                Children++;
             }
-            totalkids += numberOfkids;
-            kidsCounts[i] = numberOfkids;
+            totalkids += Children;
+            kidsCounts[i] =Children;
 
-            if (numberOfkids == 2) {
+            if (Children == 2) {
                 familiesWith2kids++;
-            } else if (numberOfkids == 3) {
+            } else if (Children == 3) {
                 familiesWith3kids++;
-            } else if (numberOfkids >= 4) {
+            } else if (Children >= 4) {
                 familiesWith4OrMorekids++;
             }
         }
@@ -61,4 +60,5 @@ public class OneOfEachStats1 {
 
         return CommonNumber;
     }
+} }
 }

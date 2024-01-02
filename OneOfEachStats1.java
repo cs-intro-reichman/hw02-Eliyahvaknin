@@ -3,53 +3,62 @@ public class OneOfEachStats1 {
 	public static void main (String[] args) {
 
         int T = Integer.parseInt(args[0]);
-
-        int totalkids = 0;
-        int[] familySize = new int[5]; 
-        int maxSizeCount = 0;
-        int mostCommonFamilySize = 0;
+        double totalkids = 0;
+        int familiesWith2kids = 0;
+        int familiesWith3kids = 0;
+        int familiesWith4OrMorekids = 0;
+        int[] kidsCounts = new int[T];
 
         for (int i = 0; i < T; i++) {
-            int numberOfChildren = simulateOneFamily();
-            totalkids += numberOfChildren;
+            boolean boy = false;
+            boolean girl = false;
+            int numberOfkids = 0;
 
-            if (numberOfChildren >= 4) {
-                familySize[4]++;
-            } else {
-                familySize[numberOfChildren]++;
+            while (!(boy && girl)) {
+                if (Math.random() < 0.5) {
+                    boy = true;
+                } else {
+                    girl = true;
+                }
+                numberOfkids++;
             }
+            totalkids += numberOfkids;
+            kidsCounts[i] = numberOfkids;
 
-
-            if (familySize[numberOfChildren] > maxSizeCount) {
-                maxSizeCount = familySize[numberOfChildren];
-                mostCommonFamilySize = numberOfChildren;
+            if (numberOfkids == 2) {
+                familiesWith2kids++;
+            } else if (numberOfkids == 3) {
+                familiesWith3kids++;
+            } else if (numberOfkids >= 4) {
+                familiesWith4OrMorekids++;
             }
         }
+        double averageChildren = totalkids / T;
+        int mostCommonNumber = findMostCommonNumber(kidsCounts);
 
-
-        double averageChildren = (double) totalkids / T;
-        System.out.printf("Average: %.9f children to get at least one of each gender.%n", averageChildren);
-        System.out.println("Number of families with 2 children: " + familySize[2]);
-        System.out.println("Number of families with 3 children: " + familySize[3]);
-        System.out.println("Number of families with 4 or more children: " + familySize[4]);
-        System.out.println("The most common number of children is " + (mostCommonFamilySize >= 4 ? "4 or more" : mostCommonFamilySize) + ".");
+        System.out.println("Average: " + averageChildren + " children to get at least one of each gender.");
+        System.out.println("Number of families with 2 children: " + familiesWith2kids);
+        System.out.println("Number of families with 3 children: " + familiesWith3kids);
+        System.out.println("Number of families with 4 or more children: " + familiesWith4OrMorekids);
+        System.out.println("The most common number of children is " + mostCommonNumber + ".");
     }
 
-    private static int simulateOneFamily() {
-        boolean boyBorn = false;
-        boolean girlBorn = false;
-        int numberkids = 0;
-
-        while (!(boyBorn && girlBorn)) {
-            if (Math.random() < 0.5) {
-                boyBorn = true;
-            } else {
-                girlBorn = true;
-            }
-
-            numberkids++;
+    private static int findMostCommonNumber(int[] arr) {
+        int[] count = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i]]++;
         }
 
-        return numberkids;
+        int CommonNumber = 0;
+        int max = 0;
+
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] > max) {
+                CommonNumber = i;
+                max = count[i];
+            }
+        }
+
+        return CommonNumber;
     }
 }

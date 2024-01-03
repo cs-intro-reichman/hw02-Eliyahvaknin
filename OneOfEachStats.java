@@ -10,8 +10,7 @@ public class OneOfEachStats {
         int familiesWith2Children = 0;
         int familiesWith3Children = 0;
         int familiesWith4OrMoreChildren = 0;
-        int mostCommonNumber = 0;
-        int maxCount = 0;
+        String mostCommonNumber="";
 
         for (int i = 0; i < T; i++) {
             boolean boyBorn = false;
@@ -35,9 +34,12 @@ public class OneOfEachStats {
                 familiesWith4OrMoreChildren++;
             }
 
-            if (Children > maxCount) {
-                mostCommonNumber = Children;
-                maxCount = Children;
+            if(familiesWith2Children > familiesWith3Children){
+                mostCommonNumber = "2";
+            } else if (familiesWith3Children > familiesWith4OrMoreChildren){
+                mostCommonNumber = "3";
+            } else{
+                mostCommonNumber = "4 or more";
             }
         }
         double averageChildren = totalChildren / T;
@@ -51,3 +53,4 @@ public class OneOfEachStats {
 		    
 	}
 }
+

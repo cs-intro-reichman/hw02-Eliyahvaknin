@@ -1,68 +1,53 @@
 import java.util.Random;
-
 public class OneOfEachStats {
 	public static void main (String[] args) {
+		int T = Integer.parseInt(args[0]);
+		int times = Integer.parseInt(args[1]);
+        Random generator = new Random(times);  
+        double rnd;
 
-        int T = Integer.parseInt(args[0]);
-        int seed = Integer.parseInt(args[1]);
-        Random generator = new Random(seed);  
-        double rnd = generator.nextDouble();
-        double totalkids = 0;
-        int familiesWith2kids = 0;
-        int familiesWith3kids = 0;
-        int familiesWith4OrMorekids = 0;
-        int[] kidsCounts = new int[T];
+        double totalChildren = 0;
+        int familiesWith2Children = 0;
+        int familiesWith3Children = 0;
+        int familiesWith4OrMoreChildren = 0;
+        int mostCommonNumber = 0;
+        int maxCount = 0;
 
         for (int i = 0; i < T; i++) {
-           boolean boyborn = false;
-        boolean girlborn = false;
-        int Children = 0;
-
-             while (!(boyborn && girlborn)) {
-            if (rnd <= 0.5) {
-                    boyborn = true;
+            boolean boyBorn = false;
+            boolean girlBorn = false;
+            int Children = 0;
+            while (!(boyBorn && girlBorn)) {
+                rnd = generator.nextDouble();
+                if (rnd > 0.5) {
+                    boyBorn = true;
                 } else {
-                    girlborn = true;
+                    girlBorn = true;
                 }
                 Children++;
             }
-            totalkids += Children;
-            kidsCounts[i] =Children;
-
+            totalChildren += Children;
             if (Children == 2) {
-                familiesWith2kids++;
+                familiesWith2Children++;
             } else if (Children == 3) {
-                familiesWith3kids++;
+                familiesWith3Children++;
             } else if (Children >= 4) {
-                familiesWith4OrMorekids++;
+                familiesWith4OrMoreChildren++;
+            }
+
+            if (Children > maxCount) {
+                mostCommonNumber = Children;
+                maxCount = Children;
             }
         }
-        double averageChildren = totalkids / T;
-        int mostCommonNumber = findMostCommonNumber(kidsCounts);
+        double averageChildren = totalChildren / T;
 
         System.out.println("Average: " + averageChildren + " children to get at least one of each gender.");
-        System.out.println("Number of families with 2 children: " + familiesWith2kids);
-        System.out.println("Number of families with 3 children: " + familiesWith3kids);
-        System.out.println("Number of families with 4 or more children: " + familiesWith4OrMorekids);
+        System.out.println("Number of families with 2 children: " + familiesWith2Children);
+        System.out.println("Number of families with 3 children: " + familiesWith3Children);
+        System.out.println("Number of families with 4 or more children: " + familiesWith4OrMoreChildren);
         System.out.println("The most common number of children is " + mostCommonNumber + ".");
-    }
 
-    private static int findMostCommonNumber(int[] arr) {
-        int[] count = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            count[arr[i]]++;
-        }
-
-        int CommonNumber = 0;
-        int max = 0;
-
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] > max) {
-                CommonNumber = i;
-                max = count[i];
-            }
-        }
-
-        return CommonNumber;
-    }
+		    
+	}
 }

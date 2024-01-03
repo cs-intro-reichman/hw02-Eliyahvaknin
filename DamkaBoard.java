@@ -1,22 +1,11 @@
-public class DamkaBoard {
-	public static void main(String[] args) {
-		int nam = Integer.parseInt(args[0]);
-
-		for (int i = 0; i < nam; i++) {
-			for (int j = 0; j < nam; j++) {
-
-				if ((i + j) % 2 == 0) {
-					System.out.print("*");
-				}
-				else {
-					System.out.print(" ");
-					System.out.print("* ");
-
-
-
-				}
-			}
-			System.out.println();
-		}
-	}
+public class DamkaBoard1 {
+    public static void main(String[] args) {
+        int x = Integer.parseInt(args[0]);
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < x*2; j++) {
+                System.out.print((i+j)%2 == 0 ? "*":" ");
+            }
+            System.out.println();
+        } 
+     }
 }

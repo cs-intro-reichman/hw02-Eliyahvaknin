@@ -6,6 +6,7 @@ public class Reverse {
             System.out.print(input.charAt(i));
         }
         System.out.println();
+        // TODO: identations mess, everything should be on the same level
 
 		      int middle = (input.length()-1)/2;
 
